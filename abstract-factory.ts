@@ -1,4 +1,8 @@
+  // The Abstract Factory pattern is a creational design pattern that provides an interface for creating families 
+  // of related or dependent objects without specifying their concrete classes.
+  
   // Abstract Product A
+  {
   interface ProductA {
     operationA(): string;
   }
@@ -89,4 +93,4 @@
   const factory2 = new ConcreteFactory2();
   const client2 = new Client(factory2);
   client2.operate();
-  
+}
