@@ -1,0 +1,22 @@
+{
+  "name": "typescript-printer-example",
+  "version": "1.0.0",
+  "description": "Example TypeScript project with printers",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "printer",
+    "example"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.18.71",
+    "typescript": "^4.5.5"
+  }
+}
