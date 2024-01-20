@@ -82,4 +82,14 @@ class Product {
   const builderB = new ConcreteBuilderB();
   const clientB = new Client();
   clientB.constructAndShow(builderB);
+  
+// 
+  class Country {
+    constructor(country) {
+      Object.assign(this, country);
+    }
+  }
+  
+  const country = new Country({ name: "Brazil", demonym: "Brazilian" });
+  console.log(country)
 }  

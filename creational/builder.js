@@ -1,72 +1,87 @@
-"use strict";
 // Product
 // The Builder pattern is a creational design pattern that separates the construction
 // of a complex object from its representation, allowing the same construction process to create different representation
 {
-    class Product {
-        constructor() {
+    var Product_1 = /** @class */ (function () {
+        function Product() {
             this.parts = [];
         }
-        addPart(part) {
+        Product.prototype.addPart = function (part) {
             this.parts.push(part);
-        }
-        show() {
-            console.log(`Product parts: ${this.parts.join(', ')}`);
-        }
-    }
+        };
+        Product.prototype.show = function () {
+            console.log("Product parts: ".concat(this.parts.join(', ')));
+        };
+        return Product;
+    }());
     // Concrete Builder A
-    class ConcreteBuilderA {
-        constructor() {
-            this.product = new Product();
+    var ConcreteBuilderA = /** @class */ (function () {
+        function ConcreteBuilderA() {
+            this.product = new Product_1();
         }
-        buildPartA() {
+        ConcreteBuilderA.prototype.buildPartA = function () {
             this.product.addPart('PartA for BuilderA');
-        }
-        buildPartB() {
+        };
+        ConcreteBuilderA.prototype.buildPartB = function () {
             this.product.addPart('PartB for BuilderA');
-        }
-        getResult() {
+        };
+        ConcreteBuilderA.prototype.getResult = function () {
             return this.product;
-        }
-    }
+        };
+        return ConcreteBuilderA;
+    }());
     // Concrete Builder B
-    class ConcreteBuilderB {
-        constructor() {
-            this.product = new Product();
+    var ConcreteBuilderB = /** @class */ (function () {
+        function ConcreteBuilderB() {
+            this.product = new Product_1();
         }
-        buildPartA() {
+        ConcreteBuilderB.prototype.buildPartA = function () {
             this.product.addPart('PartA for BuilderB');
-        }
-        buildPartB() {
+        };
+        ConcreteBuilderB.prototype.buildPartB = function () {
             this.product.addPart('PartB for BuilderB');
-        }
-        getResult() {
+        };
+        ConcreteBuilderB.prototype.getResult = function () {
             return this.product;
-        }
-    }
+        };
+        return ConcreteBuilderB;
+    }());
     // Director
-    class Director {
-        construct(builder) {
+    var Director_1 = /** @class */ (function () {
+        function Director() {
+        }
+        Director.prototype.construct = function (builder) {
             builder.buildPartA();
             builder.buildPartB();
-        }
-    }
+        };
+        return Director;
+    }());
     // Client
-    class Client {
-        constructor() {
-            this.director = new Director();
+    var Client = /** @class */ (function () {
+        function Client() {
+            this.director = new Director_1();
         }
-        constructAndShow(builder) {
+        Client.prototype.constructAndShow = function (builder) {
             this.director.construct(builder);
-            const product = builder.getResult();
+            var product = builder.getResult();
             product.show();
-        }
-    }
+        };
+        return Client;
+    }());
     // Example usage
-    const builderA = new ConcreteBuilderA();
-    const clientA = new Client();
+    var builderA = new ConcreteBuilderA();
+    var clientA = new Client();
     clientA.constructAndShow(builderA);
-    const builderB = new ConcreteBuilderB();
-    const clientB = new Client();
+    var builderB = new ConcreteBuilderB();
+    var clientB = new Client();
     clientB.constructAndShow(builderB);
+    // 
+    var Country = /** @class */ (function () {
+        function Country(country) {
+            Object.assign(this, country);
+        }
+        return Country;
+    }());
+    var country = new Country({ name: "Brazil", demonym: "Brazilian" });
+    console.log(country);
 }
