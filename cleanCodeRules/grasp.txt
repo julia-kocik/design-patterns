@@ -1,0 +1,49 @@
+General Responsibility Assignment Software Patterns
+1. Information Expert:
+
+Assign the responsibility to the class that has the required information to fulfill it.
+Choose the class with the most relevant information or that manages the data needed for the responsibility.
+
+2. Creator:
+
+Assign the responsibility to the class responsible for creating an instance of a class.
+If one class is responsible for creating another class, then it should be the creator.
+
+3. Controller:
+
+Assign the responsibility to a class representing a system, subsystem, or use case controller.
+The controller is responsible for coordinating and controlling the flow of operations, serving as an intermediary between the user interface and the system.
+A class that manages the flow of the system or handles user interactions is a good candidate to be a controller.
+
+4. Low Coupling:
+
+Aim for low coupling between classes, meaning that the classes should be loosely connected and have minimal dependencies on each other.
+Reduce dependencies to make the system more flexible and easier to maintain.
+
+5. High Cohesion:
+
+Assign responsibilities in a way that promotes high cohesion within a class.
+Cohesion refers to the degree to which the elements inside a class belong together. High cohesion suggests that the class has a single, well-defined purpose.
+
+6. Polymorphism:
+
+Assign the responsibility to a class if that class is an expert in fulfilling the responsibility.
+Favor polymorphism, where a client class can use different classes interchangeably through a common interface.
+Think of it like treating different things in a similar way if they can perform a similar action.
+
+7. Pure Fabrication:
+
+Introduce a class that does not represent a concept in the problem domain but is created solely to achieve low coupling, high cohesion, or other design goals.
+This class, known as a "pure fabrication," helps in improving the overall design without violating other GRASP principles.
+Create a class that doesn't represent a real-world thing but helps with design.
+
+8. Indirection:
+
+Assign the responsibility to an intermediate object to mediate between other components or services to reduce direct dependencies.
+Introduce an intermediary or indirection to manage communication and reduce coupling.
+
+9. Protected Variations:
+
+Assign the responsibility to the class that is least likely to be affected by changes in other parts of the system.
+Use interfaces or abstract classes to protect components from variations in other components.
+Depend on abstractions (interfaces or abstract classes) to protect against variations in other parts.
